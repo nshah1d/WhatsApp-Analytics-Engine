@@ -27,7 +27,7 @@ To ensure the chat interface correctly distinguishes between "You" (Right/Green 
 
 1.  Open **`app.js`**.
 2.  Find the configuration line at the very top:
-    ```JavaScript
+    ```javascript
     const MY_NAME = "John Doe"; // Change this to your WhatsApp Display Name
     ```
 3.  Update it to match exactly how your name appears in your exported text files.
@@ -79,7 +79,7 @@ This project demonstrates proficiency in **Full Stack Web Development** and **Da
 
 Your server directory should look like this:
 
-```File Hierarchy
+```text
 /public_html/whatsapp-viewer/
 ├── index.html
 ├── app.js
