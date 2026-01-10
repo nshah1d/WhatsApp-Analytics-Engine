@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/Status-Completed-success) ![Privacy](https://img.shields.io/badge/Privacy-Local%20Only-green) ![Platform](https://img.shields.io/badge/Platform-Web-blue) ![License](https://img.shields.io/badge/License-MIT-orange)
 
-[![Live Demo](https://img.shields.io/badge/Demo-Live%20Preview-brightgreen?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.nauman.cc/whatsapp)
+[![Live Demo](https://img.shields.io/badge/Demo-Live%20Preview-brightgreen?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.nauman.cc/whatsapp-viewer)
 
 A lightweight, private, and self-hosted web interface to view your exported WhatsApp chat logs.
 
