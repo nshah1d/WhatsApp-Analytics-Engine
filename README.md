@@ -1,62 +1,60 @@
-# WhatsApp Data Visualiser
+# WhatsApp Analytics Engine
 
-![Status](https://img.shields.io/badge/Status-Production-success) ![Privacy](https://img.shields.io/badge/Privacy-Local%20Only-green) ![Platform](https://img.shields.io/badge/Architecture-Responsive-blue) ![License](https://img.shields.io/badge/License-MIT-orange) [![Live Demo](https://img.shields.io/badge/Demo-Live%20Preview-31B33B)](https://www.nauman.cc/demo/whatsapp/)
+![Status](https://img.shields.io/badge/Status-Production-success) ![Privacy](https://img.shields.io/badge/Privacy-Local%20Only-green) ![Architecture](https://img.shields.io/badge/Architecture-Zero%20Dependency-blue) ![License](https://img.shields.io/badge/License-MIT-orange) [![Live Demo](https://img.shields.io/badge/Demo-Live%20Preview-31B33B)](https://www.nauman.cc/demo/whatsapp/)
 
-A high-fidelity, privacy-focused visualisation engine for WhatsApp chat exports.
+A privacy-first ETL and data processing engine for massive, unstructured WhatsApp communication archives.
 
-This application transforms raw, unstructured `_chat.txt` logs and media assets into a fully interactive, searchable, and responsive application interface. Engineered with a "Zero-Dependency" philosophy, it operates without external frameworks, databases, or cloud services, ensuring absolute data sovereignty.
+This application transforms raw `_chat.txt` logs and media assets into a structured, queryable JSON dataset with a fully interactive inspection interface. Engineered with a strict zero-dependency philosophy, it operates locally without external frameworks, databases, or cloud processing, ensuring absolute data sovereignty and accurate schema normalisation.
 
 ---
 
 ## Key Capabilities
 
-* **Zero-Dependency Architecture:** Built exclusively with vanilla JavaScript (ES6+) and PHP. No Node_modules, no build pipelines, and no bloat.
-* **Data Sovereignty (Privacy First):** The system runs entirely within your local environment or private server. Sensitive chat data is never transmitted to third-party clouds.
-* **High-Performance Rendering:** Utilises custom DOM virtualisation and lazy-loading algorithms to render massive chat histories (10,000+ messages) and heavy media libraries (500MB+) with zero layout thrashing.
-* **Context-Aware Media Drawer:** A dedicated utility panel that aggregates, categorises, and previews attachments (Images, Video, Documents) independently of the message stream.
-* **Advanced Data Normalisation:** Proprietary Regex logic cleans and structures chaotic chat logs, handling multi-line messages, system events, and timestamp variations automatically.
+* **Regex-Driven Schema Normalisation:** Proprietary parsing logic cleans and structures chaotic chat logs. It automatically handles multi-line messages, system events, and multi-lingual timestamp variations, converting raw text into strict JSON objects.
+* **Index-Based Traversal:** The parsing engine indexes data arrays linearly, enabling instantaneous querying and temporal navigation of multi-year conversational histories without server-side processing overhead.
+* **Memory-Optimised Chunking:** Utilises custom DOM management and lazy-loading algorithms to render massive datasets (50,000+ records) and heavy media libraries with minimal memory overhead.
+* **Media Metadata Aggregation:** A dedicated utility processor isolates, categorises, and previews attachments (images, video, documents) independently of the main text stream.
+* **Data Sovereignty (Privacy First):** The ETL pipeline executes entirely within the local environment. Sensitive communication records are never transmitted to third-party servers.
 
 ---
 
-## Adaptive Architecture
+## Data Inspection Interface
 
-The interface features a responsive "Glass" UI that adapts its layout logic based on the host device capabilities.
+The frontend serves as a responsive inspection tool for the parsed dataset, adapting its layout logic based on the host device capabilities.
 
-### Desktop: The Command Centre
-On high-resolution displays, the application renders a productivity-focused **Three-Pane Layout**:
-* **Navigation Sidebar:** Persistent access to chat archives.
-* **Active Thread:** Wide-screen message view with granular search controls.
-* **Inspector Panel:** Side-by-side media browsing without context switching.
+### Desktop View
+On high-resolution displays, the application renders a productivity-focused three-pane layout:
+* **Archive Navigation:** Persistent access to indexed chat folders.
+* **Active Dataset:** Wide-screen message view with granular search controls.
+* **Media Inspector:** Side-by-side asset browsing without context switching.
 
-### Mobile: The Field Unit
-On touch devices (<768px), the system shifts to a **Native-App Emulation Mode**:
-* **Off-Canvas Navigation:** Slide-out drawers for navigation and media maximize the reading viewport.
+### Mobile View
+On touch devices (<768px), the system shifts to a mobile-optimised layout:
+* **Off-Canvas Navigation:** Slide-out drawers for navigation and media to maximise the reading viewport.
 * **Touch Optimisation:** Enlarged hit targets and swipe-friendly gestures.
-* **Smart Viewport:** Disables accidental zooming (`user-scalable=no`) to mimic native application behaviour.
-* **Adaptive Grid:** Media galleries dynamically reflow columns to maintain visual clarity on narrower screens.
+* **Smart Viewport:** Disables accidental zooming to mimic native application behaviour.
 
 ---
 
-## Virtualisation & Navigation Engine
+## Memory Management & Data Traversal
 
-To handle multi-gigabyte chat logs without crashing the browser, the application utilises a custom **Bi-Directional Virtual Scrolling** algorithm:
+To handle multi-gigabyte log files without crashing the browser, the application relies on an efficient memory management algorithm:
 
-* **Teleportation Logic:** When jumping to a search result, the engine bypasses linear scrolling. Instead, it calculates the target index, wipes the DOM to free memory, and injects a localised "slice" of history (e.g., 20 messages before/after).
-* **Bi-Directional Loading:** Unlike standard infinite scroll (which only looks up), this engine detects scroll boundaries in both directions. Users can scroll up to load older context or down to read towards the present.
-* **Asset Lazy-Loading:** Heavy media assets (images/videos) outside the active viewport are effectively garbage-collected, keeping the memory footprint minimal regardless of the jump depth.
-* **Context Restoration:** A "Return to Present" floating action button (FAB) automatically detects when the user is viewing historical data and offers a one-click return to the live conversation end.
+* **Index-Based Jumping:** When navigating to a search result, the engine bypasses linear scrolling. It calculates the target array index, clears the DOM to free memory, and injects a localised slice of history.
+* **Bi-Directional Loading:** The engine detects scroll boundaries in both directions, seamlessly loading older context or newer records by dynamically slicing the parsed array.
+* **Asset Lazy-Loading:** Heavy media assets outside the active viewport are effectively garbage-collected, keeping the memory footprint stable regardless of dataset size.
 
 ---
 
 ## Technical Specifications
 
-This project serves as a demonstration of advanced **Full Stack Engineering** without reliance on abstraction layers.
+This project demonstrates advanced data engineering and frontend architecture without reliance on abstraction layers.
 
-* **Frontend Core:** Vanilla JS with Asynchronous Fetch API for non-blocking data ingestion.
-* **Text Processing:** Complex Regular Expression (Regex) engines to parse non-standardised log files into strict JSON objects.
-* **Media Handling:** Custom video player controls with "Auto-Pause-Others" logic to prevent audio overlap.
-* **Security:** Base64 encoding (`btoa`) for sanitising DOM IDs, preventing selector errors from special characters in filenames.
-* **Visual System:** CSS Variables-based Dark Mode with SVG iconography for resolution-independent sharpness.
+* **Pipeline Core:** Vanilla JavaScript (ES6+) with the Asynchronous Fetch API for non-blocking data ingestion.
+* **Text Processing:** Complex Regular Expression algorithms to parse non-standardised log files into strictly typed JSON structures.
+* **Media Handling:** Custom video player controls with auto-pause logic to prevent audio overlap during rapid traversal.
+* **Security:** Base64 encoding for sanitising DOM IDs, preventing selector errors from special characters in filenames or multi-lingual text.
+* **Backend Indexer:** A lightweight PHP script to scan local directories and build the initial file inventory.
 
 ---
 
@@ -70,12 +68,12 @@ This project serves as a demonstration of advanced **Full Stack Engineering** wi
 
 ## Configuration
 
-To enable accurate message alignment, you must define the "Host User."
+To enable accurate sender alignment in the dataset, you must define the host user.
 
-1.  Open **`app.js`**.
-2.  Locate the configuration constant at the top of the file:
-    ```javascript
-    const MY_NAME = "John Doe"; 
+1. Open **`app.js`**.
+2. Locate the configuration constant at the top of the file:
+   ```javascript
+   const MY_NAME = "John Doe";
     ```
 3.  Update this string to match the exact display name found in your exported `_chat.txt` logs.
 
@@ -83,20 +81,18 @@ To enable accurate message alignment, you must define the "Host User."
 
 ## Deployment Protocol
 
-1.  **Deploy Core Files:**
-    Upload `index.html`, `app.js`, `style.css`, and `scan.php` to any PHP-enabled web server (Apache/Nginx).
+1.  **Deploy Core Files:** Upload `index.html`, `app.js`, `style.css`, and `scan.php` to any PHP-enabled web server (Apache/Nginx).
 
 2.  **Ingest Data:**
     * **Export:** In WhatsApp, select **Export Chat** > **Attach Media**.
     * **Deploy:** Unzip the resulting folder and upload it directly to the server directory (same level as `index.html`).
 
-3.  **Initialise:**
-    * Navigate to the URL. The application will auto-scan the directory, index the chat folders, and build the UI dynamically.
+3.  **Initialise:** Navigate to the URL. The application will auto-scan the directory, run the ETL pipeline on the text logs, and build the inspection UI dynamically..
 
 ### Directory Hierarchy
 
 ```text
-/public_html/whatsapp-viewer/
+/public_html/whatsapp-analytics-engine/
 ├── index.html          # Application Shell
 ├── app.js              # State Management & Logic
 ├── style.css           # Visual Theme & Responsive Rules
