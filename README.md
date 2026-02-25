@@ -1,6 +1,6 @@
 # WhatsApp Analytics Engine
 
-![Status](https://img.shields.io/badge/Status-Production-success) ![Privacy](https://img.shields.io/badge/Privacy-Local%20Only-green) ![Architecture](https://img.shields.io/badge/Architecture-Zero%20Dependency-blue) ![License](https://img.shields.io/badge/License-MIT-orange) [![Live Demo](https://img.shields.io/badge/Demo-Live%20Preview-31B33B)](https://www.nauman.cc/demo/whatsapp/)
+![Status](https://img.shields.io/badge/Status-Production-success) ![Privacy](https://img.shields.io/badge/Privacy-Local%20Only-green) ![Architecture](https://img.shields.io/badge/Architecture-Zero%20Dependency-blue) ![License](https://img.shields.io/badge/License-MIT-orange)
 
 A privacy-first ETL and data processing engine for massive, unstructured WhatsApp communication archives.
 
